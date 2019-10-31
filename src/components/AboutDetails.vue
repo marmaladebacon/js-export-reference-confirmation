@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1> 
+    <h1>{{ msg }}</h1>    
   </div>
 </template>
 
@@ -8,9 +8,13 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import { myInstantiatedClass} from './randomDetails';
 
+
+
 @Component
-export default class HelloWorld extends Vue {
+export default class AboutDetails extends Vue {
   get msg(){
+    myInstantiatedClass.setMsg('Setting Override from AboutDetails');
+    console.log(myInstantiatedClass);
     return myInstantiatedClass.msg;
   }
 }
